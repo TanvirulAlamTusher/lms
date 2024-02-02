@@ -12,6 +12,11 @@ class AdminController extends Controller
         return view('admin.index');
     }
     //End Method
+    public function AdminLogin(Request $request)
+    {
+       return view('admin.admin_login');
+    }
+    //End Method
 
     public function AdminLogout(Request $request)
     {
@@ -21,7 +26,8 @@ class AdminController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/login');
+        return redirect('/admin/login');
     }
     //End Method
+
 }
