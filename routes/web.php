@@ -50,6 +50,7 @@ Route::middleware(['auth','roles:admin'])->group(function () {
     //Category all routes
     Route::controller(CategoryController::class)->group(function () {
        Route::get('/all/category','AllCategory')->name('all.category');
+       Route::get('/add/category','AddCategory')->name('add.category');
 
     });
     //End

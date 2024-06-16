@@ -15,7 +15,7 @@
         </div>
         <div class="ms-auto">
             <div class="btn-group">
-            <a href="" class="btn btn-primary "> Add Category </a>
+            <a href="{{ route('add.category') }}" class="btn btn-primary "> Add Category </a>
 
 
             </div>
@@ -31,9 +31,8 @@
                     <thead>
                         <tr>
                             <th>Sl no.</th>
-                            <th>Id</th>
-                            <th>image</th>
                             <th>Category Name</th>
+                            <th>image</th>
                             <th>Category Slug</th>
                             <th>Action</th>
                         </tr>
@@ -43,12 +42,13 @@
                         <tr>
                             @foreach ($category as $key=> $item)
                             <td>{{ $key+1}}</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>2011/04/25</td>
-                            <td>$320,800</td>
-                            <td>$320,800</td>
+                            <td>{{ $item->category_name }}</td>
+                            <td><img src="{{ asset('$item->image')}}" alt="Category Image" style="width: 70px; hight: 40px;"></td>
+                            <td>{{ $item->category_slug }}</td>
+                           <td>
+                            <a href="" class="btn btn-info px-5">Edit</a>
+                            <a href="" class="btn btn-danger px-5">Delete</a>
+                           </td>
                             @endforeach
 
                         </tr>
